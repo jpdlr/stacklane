@@ -1,0 +1,173 @@
+:root {
+  /* Typography */
+  --font-display: 'Fraunces', 'Iowan Old Style', 'Palatino Linotype', serif;
+  --font-body: 'Instrument Sans', 'Avenir Next', 'Segoe UI', sans-serif;
+
+  --md-sys-typescale-display-large: 700 3.4rem/1.05 var(--font-display);
+  --md-sys-typescale-headline-large: 650 2.4rem/1.15 var(--font-display);
+  --md-sys-typescale-headline-medium: 600 1.9rem/1.2 var(--font-display);
+  --md-sys-typescale-title-large: 600 1.3rem/1.35 var(--font-display);
+  --md-sys-typescale-title-medium: 600 1.05rem/1.4 var(--font-body);
+  --md-sys-typescale-body-large: 400 1rem/1.6 var(--font-body);
+  --md-sys-typescale-body-medium: 400 0.9rem/1.6 var(--font-body);
+  --md-sys-typescale-label-large: 600 0.85rem/1.4 var(--font-body);
+  --md-sys-typescale-label-medium: 600 0.75rem/1.3 var(--font-body);
+
+  /* Shape */
+  --md-sys-shape-corner-none: 0;
+  --md-sys-shape-corner-extra-small: 6px;
+  --md-sys-shape-corner-small: 10px;
+  --md-sys-shape-corner-medium: 14px;
+  --md-sys-shape-corner-large: 18px;
+  --md-sys-shape-corner-extra-large: 26px;
+
+  /* Elevation */
+  --md-sys-elevation-0: none;
+  --md-sys-elevation-1: var(--shadow-soft);
+  --md-sys-elevation-2: var(--shadow-float);
+  --md-sys-elevation-3: 0 18px 40px rgba(25, 19, 12, 0.16);
+  --md-sys-elevation-4: 0 30px 60px rgba(25, 19, 12, 0.2);
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-medium: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+:root,
+[data-theme='light'] {
+  color-scheme: light;
+
+  /* Core palette - warm pastels */
+  --md-sys-color-primary: #f08b5e;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #fde2d4;
+  --md-sys-color-on-primary-container: #7a3b1e;
+
+  --md-sys-color-secondary: #8aa3d7;
+  --md-sys-color-on-secondary: #1d2a44;
+  --md-sys-color-secondary-container: #e2e9fb;
+  --md-sys-color-on-secondary-container: #2f3e5f;
+
+  --md-sys-color-tertiary: #9ac5a6;
+  --md-sys-color-on-tertiary: #163123;
+  --md-sys-color-tertiary-container: #e6f4ea;
+  --md-sys-color-on-tertiary-container: #2f4d3b;
+
+  --md-sys-color-error: #e28f8f;
+  --md-sys-color-on-error: #ffffff;
+  --md-sys-color-error-container: #fde4e4;
+  --md-sys-color-on-error-container: #7c3b3b;
+
+  --md-sys-color-background: #f7f4ef;
+  --md-sys-color-on-background: #2b2621;
+  --md-sys-color-surface: #fffdf9;
+  --md-sys-color-on-surface: #2b2621;
+
+  --md-sys-color-surface-variant: #efe9e1;
+  --md-sys-color-on-surface-variant: #5b534c;
+  --md-sys-color-outline: #e2d8cc;
+  --md-sys-color-outline-variant: #f1e8dd;
+
+  --md-sys-color-surface-container-lowest: #fffaf4;
+  --md-sys-color-surface-container-low: #fdf7f0;
+  --md-sys-color-surface-container: #f8f1e9;
+  --md-sys-color-surface-container-high: #f2e9de;
+  --md-sys-color-surface-container-highest: #ece1d5;
+
+  /* Theme surfaces */
+  --app-bg:
+    radial-gradient(1200px 700px at 10% -10%, rgba(255, 214, 170, 0.7), transparent 60%),
+    radial-gradient(900px 600px at 110% 0%, rgba(186, 210, 255, 0.7), transparent 55%),
+    radial-gradient(800px 500px at 30% 110%, rgba(196, 236, 210, 0.6), transparent 55%),
+    linear-gradient(180deg, #f8f4ee 0%, #fdfbf8 100%);
+  --header-bg: rgba(255, 253, 249, 0.86);
+  --header-border: rgba(226, 216, 204, 0.9);
+  --panel-border: rgba(219, 205, 190, 0.9);
+  --card-border: rgba(226, 212, 198, 0.95);
+  --column-texture: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
+  --focus-ring-color: rgba(240, 139, 94, 0.5);
+  --shadow-soft: 0 8px 24px rgba(31, 23, 16, 0.08);
+  --shadow-float: 0 16px 40px rgba(31, 23, 16, 0.12);
+
+  /* Column-specific pastel colors */
+  --column-color-1: #f8eee2;
+  --column-color-2: #e6f2fb;
+  --column-color-3: #e8f6ee;
+  --column-color-4: #f5ecf8;
+
+  /* Priority colors */
+  --priority-low: #cfead8;
+  --priority-medium: #f2dcc7;
+  --priority-high: #f3cfcf;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --md-sys-color-primary: #f3a074;
+  --md-sys-color-on-primary: #2a1a12;
+  --md-sys-color-primary-container: #3b2a21;
+  --md-sys-color-on-primary-container: #f8e5d8;
+
+  --md-sys-color-secondary: #9bb4e6;
+  --md-sys-color-on-secondary: #1b2540;
+  --md-sys-color-secondary-container: #2b3759;
+  --md-sys-color-on-secondary-container: #d9e3fb;
+
+  --md-sys-color-tertiary: #9fccb2;
+  --md-sys-color-on-tertiary: #13281f;
+  --md-sys-color-tertiary-container: #274033;
+  --md-sys-color-on-tertiary-container: #d7efe3;
+
+  --md-sys-color-error: #e6a0a0;
+  --md-sys-color-on-error: #2a1717;
+  --md-sys-color-error-container: #4a2c2c;
+  --md-sys-color-on-error-container: #f6dede;
+
+  --md-sys-color-background: #0f1216;
+  --md-sys-color-on-background: #f1ebe4;
+  --md-sys-color-surface: #151a20;
+  --md-sys-color-on-surface: #f1ebe4;
+
+  --md-sys-color-surface-variant: #1f252d;
+  --md-sys-color-on-surface-variant: #d2c7bc;
+  --md-sys-color-outline: #2c333c;
+  --md-sys-color-outline-variant: #232a32;
+
+  --md-sys-color-surface-container-lowest: #0b0f14;
+  --md-sys-color-surface-container-low: #11161c;
+  --md-sys-color-surface-container: #151b22;
+  --md-sys-color-surface-container-high: #1b222b;
+  --md-sys-color-surface-container-highest: #222a34;
+
+  --app-bg:
+    radial-gradient(900px 600px at 10% -10%, rgba(255, 148, 92, 0.18), transparent 60%),
+    radial-gradient(900px 600px at 100% 0%, rgba(120, 164, 255, 0.18), transparent 60%),
+    radial-gradient(800px 500px at 20% 120%, rgba(120, 220, 170, 0.14), transparent 60%),
+    linear-gradient(180deg, #0f1216 0%, #0b0f14 100%);
+  --header-bg: rgba(20, 25, 31, 0.86);
+  --header-border: rgba(38, 45, 54, 0.9);
+  --panel-border: rgba(45, 54, 64, 0.9);
+  --card-border: rgba(50, 60, 70, 0.9);
+  --column-texture: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
+  --focus-ring-color: rgba(243, 160, 116, 0.5);
+  --shadow-soft: 0 10px 24px rgba(6, 10, 14, 0.4);
+  --shadow-float: 0 18px 44px rgba(6, 10, 14, 0.55);
+
+  --column-color-1: #1c222b;
+  --column-color-2: #22202a;
+  --column-color-3: #1b2521;
+  --column-color-4: #241f28;
+
+  --priority-low: #274033;
+  --priority-medium: #3b2f24;
+  --priority-high: #3d2626;
+}

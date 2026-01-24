@@ -1,0 +1,170 @@
+.boardContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: transparent;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg) var(--spacing-xl);
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--header-border);
+  box-shadow: var(--md-sys-elevation-1);
+  backdrop-filter: blur(14px);
+}
+
+.title {
+  font: var(--md-sys-typescale-headline-large);
+  color: var(--md-sys-color-on-surface);
+  margin: 0;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.themeToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--md-sys-color-surface-container);
+  border: 1px solid var(--panel-border);
+  color: var(--md-sys-color-on-surface);
+  box-shadow: var(--md-sys-elevation-1);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.themeToggle:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--md-sys-elevation-2);
+  background: var(--md-sys-color-surface);
+}
+
+.themeIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.themeLabel {
+  font: var(--md-sys-typescale-label-large);
+}
+
+.board {
+  display: flex;
+  gap: var(--spacing-xl);
+  padding: var(--spacing-xl);
+  overflow-x: auto;
+  flex: 1;
+  align-items: flex-start;
+  animation: boardIn 420ms var(--transition-medium) both;
+}
+
+.addColumnButton {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  min-width: 280px;
+  padding: var(--spacing-md) var(--spacing-lg);
+  font: var(--md-sys-typescale-title-medium);
+  color: var(--md-sys-color-on-surface);
+  background: var(--md-sys-color-surface);
+  border: 1px dashed var(--panel-border);
+  border-radius: var(--md-sys-shape-corner-large);
+  box-shadow: var(--md-sys-elevation-1);
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+  justify-content: center;
+}
+
+.addColumnButton:hover {
+  background-color: var(--md-sys-color-surface-container-high);
+  color: var(--md-sys-color-on-surface);
+  box-shadow: var(--md-sys-elevation-2);
+  transform: translateY(-1px);
+}
+
+.addColumnForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  min-width: 280px;
+  padding: var(--spacing-md);
+  background-color: var(--md-sys-color-surface);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--md-sys-shape-corner-large);
+  box-shadow: var(--md-sys-elevation-2);
+}
+
+@keyframes boardIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.addColumnInput {
+  width: 100%;
+  padding: var(--spacing-md);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--md-sys-shape-corner-small);
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  font: var(--md-sys-typescale-body-large);
+}
+
+.addColumnInput:focus {
+  border-color: var(--md-sys-color-primary);
+  outline: none;
+}
+
+.addColumnActions {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.addButton,
+.cancelButton {
+  font: var(--md-sys-typescale-label-large);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--md-sys-shape-corner-small);
+  transition: background-color var(--transition-fast);
+  flex: 1;
+}
+
+.addButton {
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+}
+
+.addButton:hover {
+  background-color: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+}
+
+.cancelButton {
+  background-color: var(--md-sys-color-surface-variant);
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.cancelButton:hover {
+  background-color: var(--md-sys-color-outline-variant);
+}

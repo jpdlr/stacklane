@@ -1,0 +1,205 @@
+.column {
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  max-width: 320px;
+  border-radius: var(--md-sys-shape-corner-large);
+  padding: var(--spacing-md);
+  max-height: calc(100vh - 120px);
+  border: 1px solid var(--panel-border);
+  box-shadow: var(--md-sys-elevation-1);
+  background-image: var(--column-texture);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    border-color var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+  animation: columnIn 520ms var(--transition-slow) both;
+  will-change: transform, opacity;
+}
+
+.column:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--md-sys-elevation-2);
+  border-color: var(--md-sys-color-primary);
+}
+
+@keyframes columnIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-md);
+  padding: 0 var(--spacing-xs);
+}
+
+.title {
+  font: var(--md-sys-typescale-title-large);
+  color: var(--md-sys-color-on-surface);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  cursor: pointer;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--md-sys-shape-corner-small);
+  transition: background-color var(--transition-fast);
+}
+
+.title:hover {
+  background-color: var(--md-sys-color-surface-variant);
+}
+
+.count {
+  font: var(--md-sys-typescale-label-medium);
+  background-color: var(--md-sys-color-surface-container-high);
+  color: var(--md-sys-color-on-surface);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.titleInput {
+  font: var(--md-sys-typescale-title-large);
+  color: var(--md-sys-color-on-surface);
+  background-color: var(--md-sys-color-surface);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--md-sys-shape-corner-small);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  flex: 1;
+}
+
+.titleInput:focus {
+  border-color: var(--md-sys-color-primary);
+  outline: none;
+}
+
+.deleteButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--md-sys-shape-corner-small);
+  color: var(--md-sys-color-on-surface-variant);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+  opacity: 0;
+}
+
+.column:hover .deleteButton {
+  opacity: 1;
+}
+
+.deleteButton:hover {
+  background-color: var(--md-sys-color-error-container);
+  color: var(--md-sys-color-on-error-container);
+}
+
+.cardList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--spacing-xs);
+  border-radius: var(--md-sys-shape-corner-medium);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+  min-height: 100px;
+  border: 1px dashed transparent;
+}
+
+.cardList.isOver {
+  background-color: var(--md-sys-color-surface-container-high);
+  border-color: var(--md-sys-color-primary);
+}
+
+.addCardButton {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  font: var(--md-sys-typescale-body-medium);
+  color: var(--md-sys-color-on-surface-variant);
+  border-radius: var(--md-sys-shape-corner-small);
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+  margin-top: var(--spacing-sm);
+}
+
+.addCardButton:hover {
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  transform: translateY(-1px);
+}
+
+.addCardForm {
+  background-color: var(--md-sys-color-surface);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--md-sys-shape-corner-medium);
+  padding: var(--spacing-md);
+  box-shadow: var(--md-sys-elevation-1);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+}
+
+.addCardInput {
+  width: 100%;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--md-sys-shape-corner-small);
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  font: var(--md-sys-typescale-body-medium);
+}
+
+.addCardInput:focus {
+  border-color: var(--md-sys-color-primary);
+  outline: none;
+}
+
+.addCardActions {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.addButton,
+.cancelButton {
+  font: var(--md-sys-typescale-label-large);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--md-sys-shape-corner-small);
+  transition: background-color var(--transition-fast);
+}
+
+.addButton {
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+}
+
+.addButton:hover {
+  background-color: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+}
+
+.cancelButton {
+  background-color: var(--md-sys-color-surface-variant);
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.cancelButton:hover {
+  background-color: var(--md-sys-color-outline-variant);
+}
